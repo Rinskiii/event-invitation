@@ -61,18 +61,34 @@
         <p><strong>Мекен жайымыз:</strong> Қарағанды қаласы, Ж. Айбеков көшесі, 28 үй</p>
         <p><strong>Той иелері:</strong> Талғат - Қарлығаш</p>
 
-        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse" method="POST" target="_blank">
+        <form id="rsvpForm">
             <label for="surname">Аты Жөні:</label>
             <input type="text" id="surname" name="entry.1084576622" required>
-            
+        
             <p>Сіз келе аласыз ба?</p>
             <div class="radio-group">
                 <label><input type="radio" name="entry.31275417" value="Иә" required> <span>Иә</span></label>
                 <label><input type="radio" name="entry.31275417" value="Жоқ"> <span>Жоқ</span></label>
             </div>
-            
+        
             <button type="submit">Жіберу</button>
         </form>
-    </div> 
+
+<script>
+    document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Останавливаем стандартную отправку формы
+
+        let formData = new FormData(this); // Собираем данные формы
+
+        fetch("https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse", {
+            method: "POST",
+            body: formData,
+            mode: "no-cors" // Разрешаем отправку без CORS
+        }).then(() => {
+            document.getElementById("rsvpForm").reset(); // Очищаем форму
+            document.getElementById("successMessage").style.display = "block"; // Показываем сообщение
+        }).catch(error => console.error("Error:", error));
+    });
+</script>
 </body>
 </html>
