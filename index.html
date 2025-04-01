@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жас түлек 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8f1;
+            text-align: center;
+            color: #1d3b24;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .box {
+            border: 2px solid #1d3b24;
+            padding: 20px;
+            display: inline-block;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #1d3b24;
+        }
+        .radio-group {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #1d3b24;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Жас түлек 2025</h1>
+        </div>
+        <p>Құрметті қонақтар! Сіздерді қызымыз Камиланың мектеп бітіруіне арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+        <p><strong>Өтетін күні мен уақыты:</strong> 9 мамыр 2025, 13:00</p>
+        <p><strong>Мекен жайымыз:</strong> Қарағанды қаласы, Ж. Айбеков көшесі, 28 үй</p>
+        <p><strong>Той иелері:</strong> Талғат - Қарлығаш</p>
+
+        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse" method="POST" target="_blank">
+            <label for="surname">Аты Жөні:</label>
+            <input type="text" id="surname" name="entry.1084576622" required>
+            
+            <p>Сіз келе аласыз ба?</p>
+            <div class="radio-group">
+                <label><input type="radio" name="entry.31275417" value="Иә" required> <span>Иә</span></label>
+                <label><input type="radio" name="entry.31275417" value="Жоқ"> <span>Жоқ</span></label>
+            </div>
+            
+            <button type="submit">Жіберу</button>
+        </form>
+    </div> 
+</body>
+</html>
