@@ -32,13 +32,13 @@
             border-radius: 5px;
             border: 1px solid #1d3b24;
         }
-        .checkbox-group {
+        .radio-group {
             text-align: left;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
-        .checkbox-group label {
+        .radio-group label {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -58,25 +58,25 @@
         </div>
         <p>Құрметті қонақтар! Сіздерді қызымыз Камиланың мектеп бітіруіне арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
         <p><strong>Өтетін күні мен уақыты:</strong> 9 мамыр 2025, 13:00</p>
-        <p><strong>Мекен жайымыз:</strong> Қарағанды қаласы, Ж. Айбеков көшесі, 28 үй</p>
+        <p><strong>Мекен жайымыз:</strong> Каркаралы қаласы, Ж. Айбеков көшесі, 28 үй</p>
         <p><strong>Той иелері:</strong> Талғат - Қарлығаш</p>
 
-        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse" method="POST" target="_blank">
-            <input type="hidden" name="entry.1084576622" id="nameInputHidden">
-            
+        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse" method="POST" target="hidden_iframe">
             <label for="nameInput">Аты Жөні:</label>
             <input type="text" id="nameInput" name="entry.1084576622" required>
         
             <p>Сіз келе аласыз ба?</p>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="entry.31275417" value="Ия"> <span>Ия</span></label>
-                <label><input type="checkbox" name="entry.31275417" value="Жок"> <span>Жок</span></label>
+            <div class="radio-group">
+                <label><input type="radio" name="entry.31275417" value="Ия" required> <span>Ия</span></label>
+                <label><input type="radio" name="entry.31275417" value="Жоқ"> <span>Жоқ</span></label>
             </div>
         
             <button type="submit">Жіберу</button>
         </form>
         
         <p id="successMessage" style="display: none; color: green;">Сіздің жауабыңыз қабылданды! Рақмет!</p>
+        
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         
         <script>
             document.getElementById("rsvpForm").addEventListener("submit", function(event) {
@@ -89,7 +89,9 @@
                 }, 5000);
                 
                 // Очищаем форму
-                this.reset();
+                setTimeout(() => {
+                    document.getElementById("rsvpForm").reset();
+                }, 100);
             });
         </script>
     </div>
