@@ -82,35 +82,34 @@
         <iframe name="hidden_iframe" style="display:none;"></iframe>
         
         <script>
-            function submitForm(event) {
-                event.preventDefault();
-        
-                // Заполняем скрытые input'ы значениями из формы
-                document.getElementById("surnameInput").value = document.getElementById("nameInput").value;
+            document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Останавливаем стандартную отправку формы
+
+                let formData = new URLSearchParams();
+                formData.append("entry.1084576622", document.getElementById("nameInput").value); // Проверь ID!
+                
                 let selectedOption = document.querySelector('input[name="attendanceOption"]:checked');
                 if (selectedOption) {
-                    document.getElementById("attendanceInput").value = selectedOption.value;
+                    formData.append("entry.31275417", selectedOption.value); // Проверь ID!
                 }
-        
-                // Отправляем форму
-                let form = document.getElementById("rsvpForm");
-                let formData = new FormData(form);
-        
-                fetch(form.action, {
+
+                fetch("https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse", {
                     method: "POST",
                     body: formData,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
                     mode: "no-cors"
                 }).then(() => {
-                    form.reset(); // Очищаем форму
-                    document.getElementById("successMessage").style.display = "block"; // Показываем сообщение
-        
+                    document.getElementById("rsvpForm").reset();
+                    document.getElementById("successMessage").style.display = "block";
+
                     setTimeout(() => {
                         document.getElementById("successMessage").style.display = "none";
                     }, 5000);
                 }).catch(error => console.error("Error:", error));
-            }
-        
-            document.getElementById("rsvpForm").addEventListener("submit", submitForm);
+            });
+
         </script>
     </div>
 </body>
