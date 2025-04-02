@@ -3,76 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жас түлек 2025</title>
+    <title>Жас түлек 2025 | Камила</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2c5e3a;
+            --secondary-color: #f8f3e6;
+            --accent-color: #d4a762;
+            --text-color: #333333;
+            --light-text: #f8f8f8;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f8f1;
-            text-align: center;
-            color: #1d3b24;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-        }
-        .box {
-            border: 2px solid #1d3b24;
-            padding: 20px;
-            display: inline-block;
-        }
-        form {
-            margin-top: 20px;
-        }
-        input[type="text"], button {
-            display: block;
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #1d3b24;
-        }
-        .radio-group {
-            text-align: left;
+        
+        .overlay {
+            background-color: rgba(248, 243, 230, 0.9);
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
         }
-        .radio-group label {
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .invitation-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            text-align: center;
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        .invitation-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            margin: 2rem 0;
+        }
+        
+        .details {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        
+        .detail-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin: 5px 0;
+            margin-bottom: 1.5rem;
         }
-        button {
-            background-color: #1d3b24;
-            color: white;
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .hosts {
+            font-style: italic;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--accent-color);
+        }
+        
+        .rsvp-button {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .rsvp-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floral-decoration {
+            margin: 2rem 0;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+            
+            .invitation-card {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <h1>Жас түлек 2025</h1>
-        </div>
-        <p>Құрметті қонақтар! Сіздерді қызымыз Камиланың мектеп бітіруіне арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
-        <p><strong>Өтетін күні мен уақыты:</strong> 9 мамыр 2025, 13:00</p>
-        <p><strong>Мекен жайымыз:</strong> Қарағанды қаласы, Ж. Айбеков көшесі, 28 үй</p>
-        <p><strong>Той иелері:</strong> Талғат - Қарлығаш</p>
+    <div class="overlay">
+        <div class="container">
+            <div class="invitation-card">
+                <h1>Жас түлек 2025</h1>
+                <div class="subtitle">Камиланың мектеп бітіру мерекесіне құрметті шақыру.</div>
+                
+                <div class="floral-decoration">✻ ✻ ✻</div>
+                
+                <p>Құрметті қонақтар! Сіздерді қызымыз Камиланың мектеп бітіруіне арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+                
+                <div class="divider"></div>
+                
+                <div class="details">
+                    <div class="detail-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <div>
+                            <strong>Өтетін күні мен уақыты:</strong><br>
+                            9 мамыр 2025 жыл, 13:00
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <div>
+                            <strong>Мекен жайымыз:</strong><br>
+                            Каркаралы қаласы, Ж. Айбеков көшесі, 28 үй
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hosts">
+                    <strong>Той иелері:</strong> Талғат - Қарлығаш
+                </div>
+                
+                <div class="floral-decoration">✻ ✻ ✻</div>
 
-        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse" method="POST" target="_blank">
-            <label for="surname">Аты Жөні:</label>
-            <input type="text" id="surname" name="entry.1084576622" required>
-            
-            <p>Сіз келе аласыз ба?</p>
-            <div class="radio-group">
-                <label><input type="radio" name="entry.31275417" value="Иә" required> <span>Иә</span></label>
-                <label><input type="radio" name="entry.31275417" value="Жоқ"> <span>Жоқ</span></label>
+                <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd8D1jFPX1sf_rWMapL7XANboKqmaSGCsRLrMYnOdWkd60I3A/formResponse" method="POST" target="_blank">
+                    <button type="submit" class="rsvp-button">ҚАТЫСУЫМ МҮМКІН</button>
+                </form>
             </div>
-            
-            <button type="submit">Жіберу</button>
-        </form>
-    </div> 
+        </div>
+    </div>
 </body>
 </html>
